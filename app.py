@@ -101,7 +101,7 @@ if selected =="LeukoApp - Blood Cancer Prediction":
         predicted_class_name = labels_map[predicted_class.item()]
         confidence_score = confidence.item()
         
-        if predicted_class_name in ['Early_Pre_B'-'Abnormal Leukocyte Form', 'Pre_B'-'Abnormal Leukocyte Form', 'Abnormal Leukocyte Form']:
+        if predicted_class_name in ['Early Pre-B-Abnormal Leukocyte Form', 'Pre_B-Abnormal Leukocyte Form', 'Abnormal Leukocyte Form']:
             formatted_class_name = f"Malignant - {predicted_class_name}"
         else:
             formatted_class_name = "Normal Study"
