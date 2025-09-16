@@ -97,14 +97,14 @@ if selected =="LeukoApp - Blood Cancer Prediction":
             confidence, predicted_class = torch.max(probabilities, 1)
 
         # Labels map
-        labels_map = {0: 'Benign', 1: 'Early_Pre_B', 2: 'Pre_B', 3: 'Pro_B'}
+        labels_map = {0: 'Normal Study', 1: 'Early_Pre_B', 2: 'Pre_B', 3: 'Abnormal Leukocyte Forms'}
         predicted_class_name = labels_map[predicted_class.item()]
         confidence_score = confidence.item()
         
-        if predicted_class_name in ['Early_Pre_B', 'Pre_B', 'Pro_B']:
+        if predicted_class_name in ['Early_Pre_B', 'Pre_B', 'Abnormal Leukocyte Forms']:
             formatted_class_name = f"Malignant - {predicted_class_name}"
         else:
-            formatted_class_name = "Benign"
+            formatted_class_name = "Normal Study"
 
         # Display results
         st.subheader("Prediction Results")
@@ -140,3 +140,4 @@ if selected == "About Us":
         st.markdown("<p style='text-align: center;'>Pavan Kumar Didde</p>", unsafe_allow_html=True)
         st.markdown("<p style='text-align: center;'>Shaik Zuber</p>", unsafe_allow_html=True)
         st.markdown("____")
+
